@@ -17,6 +17,7 @@ namespace compilerHUSSIN
         }
         public static List<string> codeSpilted(string codeText)
         => codeText.Split(' ').ToList();
+       
         public static List<Token> stringToToken(string codeText)
             => codeSpilted(codeText).ConvertAll((part) => new Token(part));
     }

@@ -22,7 +22,20 @@ namespace compilerHUSSIN
                 return alphbet.keyWords_StructureName.Contains(_text);
             }
         }
-
+        public bool isReservedW
+        {
+            get
+            {
+                return alphbet.FunReservedWord.Contains(_text);
+            }
+        }
+        public bool isFunction
+        {
+            get
+            {
+                return alphbet.Function.Contains(_text);
+            }
+        }
         public bool isDataType
         {
             get
@@ -31,14 +44,7 @@ namespace compilerHUSSIN
             }
         }
 
-        public bool isFunction
-        {
-            get
-            {
-                return true;
-            }
-        }
-
+       
         public bool operators
         {
             get

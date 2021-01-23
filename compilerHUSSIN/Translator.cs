@@ -13,8 +13,9 @@ namespace compilerHUSSIN
         {
             _token = thisToken;
         }
-
-
+        /// <summary>
+        /// switch and if
+        /// </summary>
         public bool start_s0
         {
             get
@@ -30,7 +31,81 @@ namespace compilerHUSSIN
                 return _token.isFunction;
             }
         }
+        public bool s1_S5
+        {
+            get
+            {
+                var tempOp = new string[] { "(", ")" };
+                return tempOp.Contains(_token._text);
+            }
+        }
+        public bool s5_s40
+        {
+            get
+            {
+                var tempOp = new string[] { "{", "}" };
+                return tempOp.Contains(_token._text);
+            }
+        }
+        //public bool s5_s3
+        //{
+        //    get
+        //    {
 
+        //    }
+        //}
+        /// <summary>
+        ///  (W.H) ggggggggg 
+        /// ///////  end H.w الواجب
+        /// </summary>
+        public bool s0_s3
+        {
+            get
+            {
+                return _token.isVar;
+            }
+
+        }
+
+        public bool s3_s40
+        {
+            get
+            {
+                var tempOp = new string[] { "{","}" };
+                return tempOp.Contains(_token._text);
+            }
+        }
+        public bool s40_s2
+        {
+            get
+            {
+                return _token.isDataType;
+            }
+        }
+        public bool f_s2
+        {
+            get
+            {
+                return _token.isDataType;
+            }
+        }
+        public bool f_s40
+        {
+            get
+            {
+                return _token._text == "}";
+            }
+        }
+        public bool s40_f
+        {
+            get
+            {
+                return _token._text == ";";
+            }
+        }
+        /// <summary>
+        /// ///////  end H.w الواجب 
+        /// </summary>
         public bool start_s2
         {
             get
@@ -39,21 +114,20 @@ namespace compilerHUSSIN
             }
         }
 
-        public bool start_s3
+        public bool start_s3_or_s2_s3
         {
             get
             {
                 return _token.isVar;
             }
         }
-
-        public bool s2_s3
-        {
-            get
-            {
-                return _token.isVar;
-            }
-        }
+        //public bool s2_s3
+        //{
+        //    get
+        //    {
+        //        return _token.isVar;
+        //    }
+        //}
 
         public bool s3_s2
         {
@@ -69,11 +143,9 @@ namespace compilerHUSSIN
             {
                 var tempOperators = new string[] { "+", "*", "/", "%", "-" };
                 return tempOperators.Contains(_token._text);
-
             }
         }
-
-        public bool s3_s31
+        public bool s3_s31_or_s30_s31
         {
             get
             {
@@ -89,27 +161,33 @@ namespace compilerHUSSIN
 
         }
 
-        public bool s30_s31
-        {
-            get
-            {
-                return _token._text == "=";
+        //public bool s30_s31
+        //{
+        //    get {
+        //        return _token._text == "=";
 
-            }
-        }
-        public bool s31_s301
-        {
-            get
-            {
-                return _token.isVar || _token.isNumber;
-            }
-        }
+        //    }
+        //}
+        //public bool s31_s301
+        //{
+        //    get
+        //    {
+        //        return _token.isVar || _token.isNumber;
+        //    }
+        //}
 
-        public bool s30_s301
+        public bool s30_s301_or_s31_s301
         {
             get
             {
                 return _token.isNumber || _token.isVar;
+            }
+        }
+        public bool s301_s31
+        {
+            get
+            {
+                return _token.operators;
             }
         }
         //public bool s301_s30
@@ -132,59 +210,15 @@ namespace compilerHUSSIN
             }
         }
         /// <summary>
-        ///  (W.H) ggggggggg
+        /// switch case:
         /// </summary>
-        #region
-        public bool s0_s3
-        {
-            get
-            {
-                return _token.isVar;
-            }
-
-        }
-        public bool s3_s40
-        {
-            get
-            {
-                var tempOp = new string[] { "}" };
-                return tempOp.Contains(_token._text);
-            }
-        }
-        public bool s40_s2
-        {
-            get
-            {
-                return _token.isDataType;
-            }
-        }
-        public bool f_s2
-        {
-            get
-            {
-                return _token.isDataType;
-            }
-        }
-        public bool f_s40
-        {
-            get
-            {
-                return _token._text == "{";
-            }
-        }
-        public bool s40_f
-        {
-            get
-            {
-                return _token._text == "{";
-                //var tempO = new string[] { "}" };
-                //return tempO.Contains(_token._text);
-            }
-        }
-        /// <summary>
-        /// ///////  end H.w 
-        /// </summary>
-        #endregion
+        //public bool s301_f
+        //{
+        //    get
+        //    {
+        //        return _token._text == ";";
+        //    }
+        //}
     }
 
 }

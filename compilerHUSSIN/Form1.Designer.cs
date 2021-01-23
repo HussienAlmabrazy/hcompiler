@@ -30,8 +30,8 @@
         {
             this.txtb = new System.Windows.Forms.TextBox();
             this.lexi = new System.Windows.Forms.TextBox();
-            this.tok = new System.Windows.Forms.TextBox();
             this.scan = new System.Windows.Forms.Button();
+            this.tok = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtb
@@ -45,20 +45,11 @@
             // 
             // lexi
             // 
-            this.lexi.Location = new System.Drawing.Point(299, 87);
+            this.lexi.Location = new System.Drawing.Point(286, 87);
             this.lexi.Multiline = true;
             this.lexi.Name = "lexi";
             this.lexi.Size = new System.Drawing.Size(268, 401);
             this.lexi.TabIndex = 1;
-            // 
-            // tok
-            // 
-            this.tok.Location = new System.Drawing.Point(584, 87);
-            this.tok.Multiline = true;
-            this.tok.Name = "tok";
-            this.tok.Size = new System.Drawing.Size(268, 401);
-            this.tok.TabIndex = 2;
-            this.tok.TextChanged += new System.EventHandler(this.tok_TextChanged);
             // 
             // scan
             // 
@@ -72,13 +63,22 @@
             this.scan.UseVisualStyleBackColor = true;
             this.scan.Click += new System.EventHandler(this.scan_Click);
             // 
+            // tok
+            // 
+            this.tok.FormattingEnabled = true;
+            this.tok.Location = new System.Drawing.Point(560, 87);
+            this.tok.Name = "tok";
+            this.tok.Size = new System.Drawing.Size(264, 407);
+            this.tok.TabIndex = 4;
+            this.tok.SelectedIndexChanged += new System.EventHandler(this.tok_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 500);
-            this.Controls.Add(this.scan);
             this.Controls.Add(this.tok);
+            this.Controls.Add(this.scan);
             this.Controls.Add(this.lexi);
             this.Controls.Add(this.txtb);
             this.Name = "Form1";
@@ -92,8 +92,8 @@
 
         private System.Windows.Forms.TextBox txtb;
         private System.Windows.Forms.TextBox lexi;
-        private System.Windows.Forms.TextBox tok;
         private System.Windows.Forms.Button scan;
+        private System.Windows.Forms.ListBox tok;
     }
 }
 
