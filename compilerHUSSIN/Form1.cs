@@ -42,6 +42,7 @@ namespace compilerHUSSIN
                 #region
                 foreach (var token in tokens)
                 {
+
                     if (token.isStructureName)
                     {
                         tok.Items.Add((token._text + "  structure name"));
@@ -51,14 +52,18 @@ namespace compilerHUSSIN
                         tok.Items.Add((token._text + "  data type"));
 
                     }
-                    else if (token.isFunction)
+                    else if (token.isCondition)
                     {
-                        tok.Items.Add((token._text + "  Function"));
+                        tok.Items.Add((token._text + "  Condition"));
 
                     }
                     else if (token.isVar)
                     {
                         tok.Items.Add((token._text + "  var"));
+                    }
+                    else if (token.isReservedW)
+                    {
+                        tok.Items.Add((token._text + "  Reserved word"));
                     }
                     else if (token.isNumber)
                     {
@@ -80,7 +85,7 @@ namespace compilerHUSSIN
 
                 }
                 #endregion
-               //program.start(Tokens, indix);
+             // program.start(Tokens, indix);
             }
             else
                 MessageBox.Show("write your code...");
@@ -106,7 +111,7 @@ namespace compilerHUSSIN
                 else if (newtranslat.start_s1)
                 {
                     indix++;
-                    S1();
+                    S1(tokens2,indix);
                 }
                 else if (newtranslat.start_s0)
                 {
@@ -114,7 +119,7 @@ namespace compilerHUSSIN
                     S0(tokens2, indix);
                 }
                 else
-                    Console.WriteLine("error");
+                   MessageBox.Show("error");
             }
 
             static private void S0(List<Token> tokens2, int indix)
@@ -126,12 +131,34 @@ namespace compilerHUSSIN
                     S3(tokens2, indix);
                 }
                 else
-                    Console.WriteLine("error");
+                    MessageBox.Show("error");
             }
 
-            static private void S1()
+            static private void S1(List<Token> tokens2, int indix)
             {
-                return;
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s1_s5)
+                {
+                    indix++;
+                    S5(tokens2,indix);
+                }
+                MessageBox.Show("erroe");
+            }
+
+            private static void S5(List<Token> tokens2, int indix)
+            {
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s5_s3)
+                {
+                    indix++;
+                    S3(tokens2, indix);
+                }
+                if (newtranslat.s5_s40)
+                {
+                    indix++;
+                    S40(tokens2, indix);
+                }
+                else MessageBox.Show("error");
             }
 
             static private void S31(List<Token> tokens2, int indix)
@@ -146,7 +173,7 @@ namespace compilerHUSSIN
                 //{
 
                 //}
-                else Console.WriteLine("erorr");
+                else MessageBox.Show("erorr");
             }
 
             static private void S301(List<Token> tokens2, int indix)
@@ -167,7 +194,12 @@ namespace compilerHUSSIN
                     indix++;
                     S31(tokens2, indix);
                 }
-                else Console.WriteLine("reror");
+                else if (newtranslat.s301_s5)
+                {
+                    indix++;
+                    S5(tokens2, indix);
+                }
+                else MessageBox.Show("reror");
             }
 
             static private void S3(List<Token> tokens2, int indix)
@@ -198,8 +230,13 @@ namespace compilerHUSSIN
                     indix++;
                     S40(tokens2, indix);
                 }
+                else if (newtranslat.s3_s5)
+                {
+                    indix++;
+                    S5(tokens2, indix);
+                }
                 else
-                    Console.WriteLine("error");
+                    MessageBox.Show("error");
             }
 
             static private void S40(List<Token> tokens2, int indix)
@@ -215,7 +252,18 @@ namespace compilerHUSSIN
                     indix++;
                     F(tokens2, indix);
                 }
-                Console.WriteLine("error");
+                else if (newtranslat.s40_s6_f_s6)
+                {
+                    indix++;
+                    S6(tokens2, indix);
+                }
+                else if (newtranslat.S40toS40)
+                {
+                    indix++;
+                    S40(tokens2, indix);
+                }
+                else
+                MessageBox.Show("error");
             }
 
             static private void F(List<Token> tokens2, int indix)
@@ -226,13 +274,98 @@ namespace compilerHUSSIN
                     indix++;
                     S40(tokens2, indix);
                 }
-                else if (newtranslat.f_s40)
+                else if (newtranslat.f_s2)
                 {
                     indix++;
                     S2(tokens2, indix);
                 }
+                else if (newtranslat.f_s1)
+                {
+                    indix++;
+                    S1(tokens2, indix);
+                }
+                else if (newtranslat.s40_s6_f_s6)
+                {
+                    indix++;
+                    S6(tokens2, indix);
+                }
+                else if (newtranslat.f_s9)
+                {
+                    indix++;
+                    S9(tokens2, indix);
+                }
+                else if (newtranslat.f_s11)
+                {
+                    indix++;
+                    S11(tokens2, indix);
+                }
+                else if (newtranslat.f_s3)
+                {
+                    indix++;
+                    S3(tokens2, indix);
+                }
                 else Console.WriteLine("error");
                 Console.WriteLine("you are in the end FFF");
+            }
+
+            private static void S11(List<Token> tokens2, int indix)
+            {
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s11_s7)
+                {
+                    indix++;
+                    S7(tokens2, indix);
+                }
+                else MessageBox.Show("errror");
+            }
+
+            private static void S7(List<Token> tokens2, int indix)
+            {
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s7_s2)
+                {
+                    indix++;
+                    S2(tokens2, indix);
+                }
+                if (newtranslat.s7_s3)
+                {
+                    indix++;
+                    S3(tokens2, indix);
+                }
+                else MessageBox.Show("errror");
+            }
+
+            private static void S9(List<Token> tokens2, int indix)
+            {
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s9_f)
+                {
+                    indix++;
+                    F(tokens2,indix);
+                }
+                else MessageBox.Show("errror");
+            }
+
+            private static void S6(List<Token> tokens2, int indix)
+            {
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s6_s10)
+                {
+                    indix++;
+                    S10(tokens2,indix);
+                }
+                else MessageBox.Show("errror");
+            }
+
+            private static void S10(List<Token> tokens2, int indix)
+            {
+                Translator newtranslat = new Translator(tokens2[indix]);
+                if (newtranslat.s10_s7_or_s11_s7)
+                {
+                    indix++;
+                    S7(tokens2, indix);
+                }
+                else MessageBox.Show("errror");
             }
 
             static private void S30(List<Token> tokens2, int indix)
@@ -243,7 +376,7 @@ namespace compilerHUSSIN
                     indix++;
                     S301(tokens2, indix);
                 }
-                else Console.WriteLine("erorr");
+                else MessageBox.Show("erorr");
             }
 
             static private void S2(List<Token> tokens2, int indix)
@@ -255,7 +388,7 @@ namespace compilerHUSSIN
                     S3(tokens2, indix);
                 }
                 else
-                    Console.WriteLine("error");
+                   MessageBox.Show("error");
                 //}
             }
         }

@@ -28,22 +28,150 @@ namespace compilerHUSSIN
         {
             get
             {
-                return _token.isFunction;
+                return _token.isCondition;
             }
         }
-        public bool s1_S5
+        public bool f_s1
         {
             get
             {
-                var tempOp = new string[] { "(", ")" };
-                return tempOp.Contains(_token._text);
+                return _token.isCondition;
             }
         }
+        public bool f_s3
+        {
+            get
+            {
+                return _token.isVar;
+            }
+        }
+        //public bool s1_s5
+        //{
+        //    get
+        //    {
+        //        var tempOp = new string[] { "(", ")" };
+        //        return tempOp.Contains(_token._text);
+        //    }
+        //}
         public bool s5_s40
         {
             get
             {
                 var tempOp = new string[] { "{", "}" };
+                return tempOp.Contains(_token._text);
+            }
+        }
+      
+        public bool s5_s3
+        {
+            get
+            {
+                return _token.isVar;
+            }
+        }
+        public bool s1_s5
+        {
+            get
+            {
+                return _token._text == "(";
+            }
+        }
+       
+        public bool s3_s5
+        {
+            get
+            {
+                var tempOp = new string[] { ")", };
+                return tempOp.Contains(_token._text);
+            }
+        }
+        public bool s301_s5
+        {
+            get
+            {
+                var tempOp = new string[] { ")", };
+                return tempOp.Contains(_token._text);
+            }
+        }
+        public bool s40_s6_f_s6
+        {
+            get
+            {
+
+                var tempOp = new string[] { "case", };
+                return tempOp.Contains(_token._text);
+            }
+        }
+        public bool s6_s10
+        {
+            get
+            {
+
+                return _token.isNumber;
+            }
+        }
+        public bool s10_s7_or_s11_s7
+        {
+            get
+            {
+
+                return _token._text == ":";
+            }
+        }
+        public bool s7_s2
+        {
+            get
+            {
+
+                return _token.isDataType;
+            }
+        }
+        public bool s7_s3
+        {
+            get
+            {
+
+                return _token.isVar;
+            }
+        }
+        public bool f_s9
+        {
+            get
+            {
+
+                return _token.isReservedW;
+            }
+        }
+        public bool s9_f
+        {
+            get
+            {
+
+                return _token._text == ";";
+            }
+        }
+        public bool f_s11
+        {
+            get
+            {
+
+                return _token.isReservedW;
+            }
+        }
+        public bool s11_s7
+        {
+            get
+            {
+
+                return _token._text == ":";
+            }
+        }
+        public bool S40toS40
+        {
+            get
+            {
+
+                var tempOp = new string[] { "}","}" };
                 return tempOp.Contains(_token._text);
             }
         }
@@ -212,13 +340,7 @@ namespace compilerHUSSIN
         /// <summary>
         /// switch case:
         /// </summary>
-        //public bool s301_f
-        //{
-        //    get
-        //    {
-        //        return _token._text == ";";
-        //    }
-        //}
+        
     }
 
 }

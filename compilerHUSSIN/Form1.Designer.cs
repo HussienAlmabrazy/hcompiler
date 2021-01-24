@@ -55,9 +55,9 @@
             // 
             this.scan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scan.ForeColor = System.Drawing.Color.Maroon;
-            this.scan.Location = new System.Drawing.Point(153, 12);
+            this.scan.Location = new System.Drawing.Point(12, 32);
             this.scan.Name = "scan";
-            this.scan.Size = new System.Drawing.Size(127, 49);
+            this.scan.Size = new System.Drawing.Size(268, 49);
             this.scan.TabIndex = 3;
             this.scan.Text = "scanner";
             this.scan.UseVisualStyleBackColor = true;

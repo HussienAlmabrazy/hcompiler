@@ -29,11 +29,11 @@ namespace compilerHUSSIN
                 return alphbet.FunReservedWord.Contains(_text);
             }
         }
-        public bool isFunction
+        public bool isCondition
         {
             get
             {
-                return alphbet.Function.Contains(_text);
+                return alphbet.Condition.Contains(_text);
             }
         }
         public bool isDataType
@@ -78,9 +78,15 @@ namespace compilerHUSSIN
                     !isDataType &&
                     !operators &&
                     !isSymobl &&
+                    !isCondition&&
+                    !isReservedW&&
                     !tempSymbols.Contains(_text.First()) &&
                     !alphbet.numbers.Contains(_text.First());
             }
         }
     }
 }
+//int e = 2;
+//switch(e){case 2: int w = 3;
+//break;
+//defaultt : int q = 3;}

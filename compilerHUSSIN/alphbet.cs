@@ -11,9 +11,9 @@ namespace compilerHUSSIN
         static public string[] keyWords_DataType = new string[] { "int", "float", "string", "char", "short", "double", "long", "var", "bool" };
         static public string[] keyWords_StructureName = new string[] { "class", "struct", "list", "namespace", "enum", "interface" };
         
-        static public string[] Function = new string[] { "switch", "if","for" };
+        static public string[] Condition = new string[] { "switch", "if",};
 
-        static public string[] FunReservedWord = new string[] { "case"};
+        static public string[] FunReservedWord = new string[] { "case ","break","default",};
         static public char[] symbolsAndOperators = new char[] {'*','/','+','-','=', '&','|',';',',','>','<','!','(',')','[',']',
         '{','}',':','\"','\'','.',
         };
