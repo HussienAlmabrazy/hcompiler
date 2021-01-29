@@ -11,11 +11,8 @@ namespace compilerHUSSIN
 {
     public partial class Form1 : Form
     {
-
-
         static public int indix = 0;
         static List<Token> Tokens;
-
 
         public Form1()
         {
@@ -57,6 +54,16 @@ namespace compilerHUSSIN
                         tok.Items.Add((token._text + "  Condition"));
 
                     }
+                    else if (token.isclass)
+                    {
+                        tok.Items.Add((token._text + "  Class"));
+
+                    }
+                    else if (token.isfunction)
+                    {
+                        tok.Items.Add((token._text + "  Function"));
+
+                    }
                     else if (token.isVar)
                     {
                         tok.Items.Add((token._text + "  var"));
@@ -85,7 +92,8 @@ namespace compilerHUSSIN
 
                 }
                 #endregion
-             // program.start(Tokens, indix);
+                
+                program.start(tokens, indix);
             }
             else
                 MessageBox.Show("write your code...");
@@ -141,7 +149,7 @@ namespace compilerHUSSIN
                 {
                     indix++;
                     S5(tokens2,indix);
-                }
+                }else 
                 MessageBox.Show("erroe");
             }
 
@@ -398,6 +406,11 @@ namespace compilerHUSSIN
         }
 
         private void tok_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

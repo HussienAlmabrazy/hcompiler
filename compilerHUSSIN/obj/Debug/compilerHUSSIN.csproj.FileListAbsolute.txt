@@ -1,9 +1,9 @@
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\bin\Debug\compilerHUSSIN.exe.config
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\bin\Debug\compilerHUSSIN.exe
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\bin\Debug\compilerHUSSIN.pdb
-E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.csprojResolveAssemblyReference.cache
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.Form1.resources
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.Properties.Resources.resources
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.csproj.GenerateResource.Cache
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.exe
 E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.pdb
+E:\hussincode\compilerHUSSIN\compilerHUSSIN\obj\Debug\compilerHUSSIN.csprojResolveAssemblyReference.cache

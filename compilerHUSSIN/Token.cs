@@ -22,6 +22,21 @@ namespace compilerHUSSIN
                 return alphbet.keyWords_StructureName.Contains(_text);
             }
         }
+        public bool isfunction
+        {
+            get
+            {
+                return alphbet.function.Contains(_text);
+            }
+        }
+        public bool isclass
+        {
+            get
+            {
+                return alphbet.Class.Contains(_text);
+            }
+        }
+
         public bool isReservedW
         {
             get
@@ -78,8 +93,8 @@ namespace compilerHUSSIN
                     !isDataType &&
                     !operators &&
                     !isSymobl &&
-                    !isCondition&&
-                    !isReservedW&&
+                    !isCondition &&
+                    !isReservedW &&
                     !tempSymbols.Contains(_text.First()) &&
                     !alphbet.numbers.Contains(_text.First());
             }
